@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		29705CC920B36E9D008FDB87 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29705CBF20B36E35008FDB87 /* CryptoSwift.framework */; };
+		29705CCA20B36E9D008FDB87 /* CryptoSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 29705CBF20B36E35008FDB87 /* CryptoSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2986867420B25800002B83D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2986867320B25800002B83D3 /* AppDelegate.swift */; };
 		2986867620B25800002B83D3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2986867520B25800002B83D3 /* ViewController.swift */; };
 		2986867920B25800002B83D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2986867720B25800002B83D3 /* Main.storyboard */; };
@@ -21,6 +23,48 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		29705CBE20B36E35008FDB87 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29705CB620B36E35008FDB87 /* CryptoSwift.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 754BE45519693E190098E6F3;
+			remoteInfo = CryptoSwift;
+		};
+		29705CC020B36E35008FDB87 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29705CB620B36E35008FDB87 /* CryptoSwift.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 75211F92207249D8004E41F8;
+			remoteInfo = "CryptoSwift-TestHostApp";
+		};
+		29705CC220B36E35008FDB87 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29705CB620B36E35008FDB87 /* CryptoSwift.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 754BE46019693E190098E6F3;
+			remoteInfo = Tests;
+		};
+		29705CC420B36E35008FDB87 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29705CB620B36E35008FDB87 /* CryptoSwift.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7595C14A2072E48C00EA1A5F;
+			remoteInfo = TestsPerformance;
+		};
+		29705CC620B36E35008FDB87 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29705CB620B36E35008FDB87 /* CryptoSwift.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7564F0602072EAEB00CA5A96;
+			remoteInfo = "TestsPerformance-iOS";
+		};
+		29705CCB20B36E9D008FDB87 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29705CB620B36E35008FDB87 /* CryptoSwift.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 754BE45419693E190098E6F3;
+			remoteInfo = CryptoSwift;
+		};
 		2986868520B25801002B83D3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2986866820B25800002B83D3 /* Project object */;
@@ -37,7 +81,22 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		29705CCD20B36E9E008FDB87 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				29705CCA20B36E9D008FDB87 /* CryptoSwift.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		29705CB620B36E35008FDB87 /* CryptoSwift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CryptoSwift.xcodeproj; path = CryptoSwift/CryptoSwift.xcodeproj; sourceTree = "<group>"; };
 		2986867020B25800002B83D3 /* QRCodeTimestamp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRCodeTimestamp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2986867320B25800002B83D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2986867520B25800002B83D3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29705CC920B36E9D008FDB87 /* CryptoSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,9 +143,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		29705CB720B36E35008FDB87 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				29705CBF20B36E35008FDB87 /* CryptoSwift.framework */,
+				29705CC120B36E35008FDB87 /* CryptoSwift-TestHostApp.app */,
+				29705CC320B36E35008FDB87 /* Tests.xctest */,
+				29705CC520B36E35008FDB87 /* TestsPerformance.xctest */,
+				29705CC720B36E35008FDB87 /* TestsPerformanceDevice.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		2986866720B25800002B83D3 = {
 			isa = PBXGroup;
 			children = (
+				29705CB620B36E35008FDB87 /* CryptoSwift.xcodeproj */,
 				2986867220B25800002B83D3 /* QRCodeTimestamp */,
 				2986868720B25801002B83D3 /* QRCodeTimestampTests */,
 				2986869220B25801002B83D3 /* QRCodeTimestampUITests */,
@@ -157,10 +230,12 @@
 				2986866C20B25800002B83D3 /* Sources */,
 				2986866D20B25800002B83D3 /* Frameworks */,
 				2986866E20B25800002B83D3 /* Resources */,
+				29705CCD20B36E9E008FDB87 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				29705CCC20B36E9D008FDB87 /* PBXTargetDependency */,
 			);
 			name = QRCodeTimestamp;
 			productName = QRCodeTimestamp;
@@ -237,6 +312,12 @@
 			mainGroup = 2986866720B25800002B83D3;
 			productRefGroup = 2986867120B25800002B83D3 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 29705CB720B36E35008FDB87 /* Products */;
+					ProjectRef = 29705CB620B36E35008FDB87 /* CryptoSwift.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				2986866F20B25800002B83D3 /* QRCodeTimestamp */,
@@ -245,6 +326,45 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		29705CBF20B36E35008FDB87 /* CryptoSwift.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CryptoSwift.framework;
+			remoteRef = 29705CBE20B36E35008FDB87 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		29705CC120B36E35008FDB87 /* CryptoSwift-TestHostApp.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "CryptoSwift-TestHostApp.app";
+			remoteRef = 29705CC020B36E35008FDB87 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		29705CC320B36E35008FDB87 /* Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = Tests.xctest;
+			remoteRef = 29705CC220B36E35008FDB87 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		29705CC520B36E35008FDB87 /* TestsPerformance.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = TestsPerformance.xctest;
+			remoteRef = 29705CC420B36E35008FDB87 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		29705CC720B36E35008FDB87 /* TestsPerformanceDevice.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			name = TestsPerformanceDevice.xctest;
+			path = "TestsPerformance-iOS.xctest";
+			remoteRef = 29705CC620B36E35008FDB87 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		2986866E20B25800002B83D3 /* Resources */ = {
@@ -306,6 +426,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		29705CCC20B36E9D008FDB87 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CryptoSwift;
+			targetProxy = 29705CCB20B36E9D008FDB87 /* PBXContainerItemProxy */;
+		};
 		2986868620B25801002B83D3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 2986866F20B25800002B83D3 /* QRCodeTimestamp */;
@@ -455,6 +580,7 @@
 		2986869920B25801002B83D3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EWH85CQYYJ;
@@ -473,6 +599,7 @@
 		2986869A20B25801002B83D3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EWH85CQYYJ;

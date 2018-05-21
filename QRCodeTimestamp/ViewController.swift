@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CryptoSwift
 
 class ViewController: UIViewController {
 
@@ -31,13 +32,41 @@ class ViewController: UIViewController {
     }
     
     @objc private func generateQRCodeForCurrentTime() {
-        qrCodeImage = getQRCode(for: Date())
+        let cipherText = getEncryptedString(from: Date())
+        qrCodeImage = getQRCode(for: cipherText)
     }
     
-    private func getQRCode(for date: Date) -> UIImage {
-        let qrCode = QRCode("\(date)")
-        print("\(String(data: qrCode!.data, encoding: .utf8) ?? "")")
+    private func getQRCode(for text: String) -> UIImage {
+        let qrCode = QRCode(text)
+        let encrypted = "\(String(data: qrCode!.data, encoding: .utf8) ?? "")"
+        print(encrypted)
+        let decrypted = getDecryptedString(from: encrypted)
+        print(decrypted)
         return qrCode?.image ?? UIImage()
+    }
+    
+    private func getEncryptedString(from date: Date) -> String {
+        var cipherText = ""
+        do {
+            let aes = try AES(key: "thisisakeythisisakeythisisakeyth", iv: "drowssapdrowssap")
+            cipherText = try aes.encrypt(Array("\(date)".utf8)).toHexString()
+        }
+        catch {
+            
+        }
+        return cipherText
+    }
+    
+    private func getDecryptedString(from text: String) -> String {
+        var plainText = ""
+        do {
+            let aes = try AES(key: "thisisakeythisisakeythisisakeyth", iv: "drowssapdrowssap")
+            plainText = try aes.decrypt(Array("\(text)".utf8)).toHexString()
+        }
+        catch {
+            
+        }
+        return plainText
     }
 
 }
