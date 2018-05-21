@@ -10,16 +10,35 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var qrCodeImageView: UIImageView!
+    
+    var timer: Timer?
+    var qrCodeImage: UIImage? {
+        didSet {
+            qrCodeImageView.image = qrCodeImage
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        startQRTimer()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    private func startQRTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(generateQRCodeForCurrentTime), userInfo: nil, repeats: true)
+        timer?.fire()
     }
-
+    
+    @objc private func generateQRCodeForCurrentTime() {
+        qrCodeImage = getQRCode(for: Date())
+    }
+    
+    private func getQRCode(for date: Date) -> UIImage {
+        let qrCode = QRCode("\(date)")
+        print("\(String(data: qrCode!.data, encoding: .utf8) ?? "")")
+        return qrCode?.image ?? UIImage()
+    }
 
 }
 
