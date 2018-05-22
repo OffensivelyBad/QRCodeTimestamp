@@ -11,6 +11,8 @@ import CryptoSwift
 
 class ViewController: UIViewController {
 
+    let key: Array<UInt8> = Array("thisisakeythisisakeythisisakeyth".utf8)
+    let iv: Array<UInt8> = Array("drowssapdrowssap".utf8)
     @IBOutlet weak var qrCodeImageView: UIImageView!
     
     var timer: Timer?
@@ -37,34 +39,37 @@ class ViewController: UIViewController {
     }
     
     private func getQRCode(for text: String) -> UIImage {
-        let qrCode = QRCode(text)
-        let encrypted = "\(String(data: qrCode!.data, encoding: .utf8) ?? "")"
-        print(encrypted)
+        guard let qrCode = QRCode(text) else { return UIImage() }
+        let encrypted = "\(String(data: qrCode.data, encoding: .utf8) ?? "")"
         let decrypted = getDecryptedString(from: encrypted)
-        print(decrypted)
-        return qrCode?.image ?? UIImage()
+        
+        print("Encrypted String: \(encrypted)")
+        print("Descrypted String: \(decrypted)")
+        
+        return qrCode.image ?? UIImage()
     }
     
     private func getEncryptedString(from date: Date) -> String {
+        let input: Array<UInt8> = Array("\(date)".utf8)
         var cipherText = ""
         do {
-            let aes = try AES(key: "thisisakeythisisakeythisisakeyth", iv: "drowssapdrowssap")
-            cipherText = try aes.encrypt(Array("\(date)".utf8)).toHexString()
+            cipherText = try AES(key: key, blockMode: CBC(iv: iv), padding: .pkcs7).encrypt(input).toBase64() ?? ""
         }
         catch {
-            
+            print(error)
         }
         return cipherText
     }
     
     private func getDecryptedString(from text: String) -> String {
+        guard let input = Data(base64Encoded: text) else { return "" }
         var plainText = ""
         do {
-            let aes = try AES(key: "thisisakeythisisakeythisisakeyth", iv: "drowssapdrowssap")
-            plainText = try aes.decrypt(Array("\(text)".utf8)).toHexString()
+            let plainBytes = try AES(key: key, blockMode: CBC(iv: iv), padding: .pkcs7).decrypt(input.bytes)
+            plainText = String(bytes: plainBytes, encoding: .utf8) ?? ""
         }
         catch {
-            
+            print(error)
         }
         return plainText
     }
