@@ -43,7 +43,7 @@ class ViewController: UIViewController {
         let encrypted = "\(String(data: qrCode.data, encoding: .utf8) ?? "")"
         let decrypted = getDecryptedString(from: encrypted)
         
-        print("Encrypted String: \(encrypted)")
+        print(" Encrypted String: \(encrypted)")
         print("Descrypted String: \(decrypted)")
         
         return qrCode.image ?? UIImage()
